@@ -1,4 +1,4 @@
-# $Id$ 
+# $Id: Makefile,v 1.2 1995/05/04 02:01:59 chongo Exp chongo $ 
 #
 # loan - loan makefile
 
@@ -7,7 +7,7 @@ CC= cc
 CFLAGS= -g -O
 
 DESTDIR = /usr/local/bin
-INSTALL= bsdinst
+INSTALL= install
 TARGETS= loan loanlen
 
 all: ${TARGETS}
