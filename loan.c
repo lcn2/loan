@@ -83,7 +83,7 @@ main() 		/* loan program */
 	   fprintf(fp,"\n\t *** Amortization Schedule ***\n\n");
 	   fprintf(fp,"Principal:  %.2f\n", amt);
 	   fprintf(fp,"Future value:  %.2f\n", fv);
-	   fprintf(fp,"Term of loan in years:  %.1f\n", term);
+	   fprintf(fp,"Term of loan in years:  %.5f\n", term);
 	   fprintf(fp,"Interest Rate:  %3.3f\n", rate);
 	   fprintf(fp,"Total Interest Charge:  %.2f\n", ic);
 	   fprintf(fp,"Payment:  %.2f\n", pmt);
