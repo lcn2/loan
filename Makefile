@@ -4,10 +4,11 @@
 
 SHELL= /bin/sh
 CC= cc
-CFLAGS= -O
+CFLAGS= -g -O
 
 DESTDIR = /usr/local/bin
-TARGETS= loan
+INSTALL= bsdinst
+TARGETS= loan loanlen
 
 all: ${TARGETS}
 
@@ -17,8 +18,15 @@ loan: loan.o
 loan.o: loan.c
 	${CC} ${CFLAGS} loan.c -c
 
+loanlen: loanlen.o
+	${CC} ${CFLAGS} loanlen.o -o loanlen -lm
+
+loanlen.o: loanlen.c
+	${CC} ${CFLAGS} loanlen.c -c
+
 install: all
-	install -c -m 0755 loan ${DESTDIR}
+	${INSTALL} -c -m 0755 loan ${DESTDIR}
+	${INSTALL} -c -m 0755 loanlen ${DESTDIR}
 
 clean:
 	rm -f *.o
