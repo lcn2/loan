@@ -108,5 +108,7 @@ main() 		/* loan program */
               }
 }
 	     fprintf(fp,"\t\tInterest paid for year %d is %.2f\n\n",yr,yrint);
+	     fprintf(fp,"\t\tStandard Payment:  %.2f\n", pmt);
+	     fprintf(fp,"\t\t    Last Payment:  %.2f\n", pmt+amt);
 	     fclose(fp);
 }
