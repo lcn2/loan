@@ -1,9 +1,9 @@
 /*
  * loan - loan amoritization program
  *
- * @(#) $Revision$
- * @(#) $Id$
- * @(#) $Source$
+ * @(#) $Revision: 1.4 $
+ * @(#) $Id: loan.c,v 1.4 1999/09/26 00:22:25 chongo Exp chongo $
+ * @(#) $Source: /usr/local/src/cmd/loan/RCS/loan.c,v $
  *
  * Please do not copyright this code.  This code is in the public domain.
  *
@@ -14,13 +14,17 @@
  * USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
+ *
+ * chongo <was here> /\oo/\
+ *
+ * Share and enjoy!
  */
 
 /*
  *
  * loan.c
  * @(#) loan.c amoritization program
- * 
+ *
  * acronym:    loan amortization program
  *             ----
  *
@@ -43,7 +47,7 @@
 /*
  *
  */
- 
+
 main() 		/* loan program */
 {
 	float amt, term, rate, ic;
@@ -97,7 +101,7 @@ main() 		/* loan program */
 	     }
 
 	     /*  print header  */
-  
+
 	   fprintf(fp,"\n\t *** Amortization Schedule ***\n\n");
 	   fprintf(fp,"Principal:  %.2f\n", amt);
 	   fprintf(fp,"Future value:  %.2f\n", fv);
@@ -106,9 +110,9 @@ main() 		/* loan program */
 	   fprintf(fp,"Total Interest Charge:  %.2f\n", ic);
 	   fprintf(fp,"Payment:  %.2f\n", pmt);
 	   fprintf(fp,"\nMONTH\tPRINCIPAL\tINTEREST\tBALANCE\n");
-  
+
 	   /* start of loop to print amortization schedule */
-  
+
 	   mnbr=mbeg;
 	   for (i=1; i<=k; i++) {
 	      month = i;

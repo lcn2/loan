@@ -1,9 +1,9 @@
 /*
  * loanlen - determine the length og a loan given a payment
  *
- * @(#) $Revision$
- * @(#) $Id$
- * @(#) $Source$
+ * @(#) $Revision: 1.2 $
+ * @(#) $Id: loanlen.c,v 1.2 1999/09/26 00:22:25 chongo Exp chongo $
+ * @(#) $Source: /usr/local/src/cmd/loan/RCS/loanlen.c,v $
  *
  * Please do not copyright this code.  This code is in the public domain.
  *
@@ -15,8 +15,11 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  *
- * Based on loan.c  (6 Jul 1994)
+ * chongo <was here> /\oo/\
  *
+ * Share and enjoy!
+ *
+ * Based on loan.c  (6 Jul 1994)
  */
 
 #include <stdio.h>
@@ -25,7 +28,7 @@
 /*
  *
  */
- 
+
 main() 		/* loan program */
 {
 	float amt, term, rate, ic;
@@ -77,7 +80,7 @@ main() 		/* loan program */
 	     }
 
 	     /*  print header  */
-  
+
 	   fprintf(fp,"\n\t *** Amortization Schedule ***\n\n");
 	   fprintf(fp,"Principal:  %.2f\n", amt);
 	   fprintf(fp,"Future value:  %.2f\n", fv);
@@ -86,9 +89,9 @@ main() 		/* loan program */
 	   fprintf(fp,"Total Interest Charge:  %.2f\n", ic);
 	   fprintf(fp,"Payment:  %.2f\n", pmt);
 	   fprintf(fp,"\nMONTH\tPRINCIPAL\tINTEREST\tBALANCE\n");
-  
+
 	   /* start of loop to print amortization schedule */
-  
+
 	   mnbr=mbeg;
 	   for (i=1; i<=k; i++) {
 	      month = i;
