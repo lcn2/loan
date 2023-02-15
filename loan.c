@@ -1,5 +1,5 @@
 /*
- * loan - loan amoritization program
+ * loan - loan amortization program
  *
  * @(#) $Revision: 1.5 $
  * @(#) $Id: loan.c,v 1.5 1999/09/27 05:36:31 chongo Exp $
@@ -48,7 +48,8 @@
  *
  */
 
-main() 		/* loan program */
+int
+main(void)		/* loan program */
 {
 	float amt, term, rate, ic;
 	float r, temp, pmt, fv;

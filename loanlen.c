@@ -1,5 +1,5 @@
 /*
- * loanlen - determine the length og a loan given a payment
+ * loanlen - determine the length of a loan given a payment
  *
  * @(#) $Revision: 1.3 $
  * @(#) $Id: loanlen.c,v 1.3 1999/09/27 05:36:31 chongo Exp $
@@ -29,7 +29,8 @@
  *
  */
 
-main() 		/* loan program */
+int
+main(void)		/* loan program */
 {
 	float amt, term, rate, ic;
 	float r, temp, pmt, fv;
