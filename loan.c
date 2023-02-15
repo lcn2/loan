@@ -1,9 +1,9 @@
 /*
  * loan - loan amoritization program
  *
- * @(#) $Revision: 1.4 $
- * @(#) $Id: loan.c,v 1.4 1999/09/26 00:22:25 chongo Exp chongo $
- * @(#) $Source: /usr/local/src/cmd/loan/RCS/loan.c,v $
+ * @(#) $Revision: 1.5 $
+ * @(#) $Id: loan.c,v 1.5 1999/09/27 05:36:31 chongo Exp $
+ * @(#) $Source: /usr/local/src/bin/loan/RCS/loan.c,v $
  *
  * Please do not copyright this code.  This code is in the public domain.
  *

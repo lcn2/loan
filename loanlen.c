@@ -1,9 +1,9 @@
 /*
  * loanlen - determine the length og a loan given a payment
  *
- * @(#) $Revision: 1.2 $
- * @(#) $Id: loanlen.c,v 1.2 1999/09/26 00:22:25 chongo Exp chongo $
- * @(#) $Source: /usr/local/src/cmd/loan/RCS/loanlen.c,v $
+ * @(#) $Revision: 1.3 $
+ * @(#) $Id: loanlen.c,v 1.3 1999/09/27 05:36:31 chongo Exp $
+ * @(#) $Source: /usr/local/src/bin/loan/RCS/loanlen.c,v $
  *
  * Please do not copyright this code.  This code is in the public domain.
  *

@@ -2,9 +2,9 @@
 #
 # loan - loan makefile
 #
-# @(#) $Revision: 1.5 $
-# @(#) $Id: Makefile,v 1.5 1999/09/26 00:22:54 chongo Exp chongo $
-# @(#) $Source: /usr/local/src/cmd/loan/RCS/Makefile,v $
+# @(#) $Revision: 1.6 $
+# @(#) $Id: Makefile,v 1.6 1999/09/27 05:36:31 chongo Exp $
+# @(#) $Source: /usr/local/src/bin/loan/RCS/Makefile,v $
 #
 # Please do not copyright this code.  This code is in the public domain.
 #
