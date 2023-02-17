@@ -1,10 +1,6 @@
-#!/usr/bin/make
+#!/usr/bin/env make
 #
 # loan - loan makefile
-#
-# @(#) $Revision: 1.6 $
-# @(#) $Id: Makefile,v 1.6 1999/09/27 05:36:31 chongo Exp $
-# @(#) $Source: /usr/local/src/bin/loan/RCS/Makefile,v $
 #
 # Please do not copyright this code.  This code is in the public domain.
 #
@@ -20,9 +16,9 @@
 #
 # Share and enjoy!
 
-SHELL= /bin/sh
+SHELL= bash
 CC= cc
-CFLAGS= -g3 -O2
+CFLAGS= -O3 -g3 
 
 DESTDIR = /usr/local/bin
 INSTALL= install
