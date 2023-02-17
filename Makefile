@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# loan - loan makefile
+# loan - loan amortization and length of a loan
 #
 # Please do not copyright this code.  This code is in the public domain.
 #
