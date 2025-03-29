@@ -1,10 +1,6 @@
 /*
  * loan - loan amortization program
  *
- * @(#) $Revision: 1.5 $
- * @(#) $Id: loan.c,v 1.5 1999/09/27 05:36:31 chongo Exp $
- * @(#) $Source: /usr/local/src/bin/loan/RCS/loan.c,v $
- *
  * Please do not copyright this code.  This code is in the public domain.
  *
  * LANDON CURT NOLL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
@@ -15,9 +11,40 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  *
- * chongo <was here> /\oo/\
+ * These tools attempt to produce a common loan amortization schedule.
+ * The lender you may choose may produce a somewhat different loan schedule
+ * due to things such as:
  *
- * Share and enjoy!
+ * * differences in rounding
+ * * differences in calculation precision
+ * * periodic loan fees and related loan expenses
+ * * bugs in the lender's loan calculation (this has actually been known to happen!)
+ * * bugs in this code
+ * * etc.
+ *
+ * You **MUST** consult with a certified financial planner and/or qualified loan agent
+ * before considering any loan or loan calculation.
+ *
+ * The calculations made by these programs are being provided for educational
+ * purposes only. The results are estimates based on information you provide
+ * and may not reflect actual results. The results of the calculations are
+ * not a promise or guarantee of a customer’s eligibility or terms for
+ * a specific product or service.
+ *
+ * Landon Curt Noll is not responsible for the content, results, or accuracy
+ * of the information on the calculators.
+ *
+ * The calculations are hypothetical examples designed to illustrate the
+ * impact compounding can have. The examples are not representative of
+ * any investment class or specific security. Actual returns and principal
+ * values will vary.
+ *
+ * chongo (Landon Curt Noll) /\oo/\
+ *
+ * http://www.isthe.com/chongo/index.html
+ * https://github.com/lcn2
+ *
+ * Share and Enjoy!     :-)
  */
 
 /*
@@ -45,8 +72,9 @@
 #include <math.h>
 
 /*
- *
+ * official version
  */
+#define VERSION "1.5.1 2025-03-28"          /* format: major.minor YYYY-MM-DD */
 
 int
 main(void)		/* loan program */

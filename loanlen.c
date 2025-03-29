@@ -1,10 +1,6 @@
 /*
  * loanlen - determine the length of a loan given a payment
  *
- * @(#) $Revision: 1.3 $
- * @(#) $Id: loanlen.c,v 1.3 1999/09/27 05:36:31 chongo Exp $
- * @(#) $Source: /usr/local/src/bin/loan/RCS/loanlen.c,v $
- *
  * Please do not copyright this code.  This code is in the public domain.
  *
  * LANDON CURT NOLL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
@@ -15,26 +11,58 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  *
- * chongo <was here> /\oo/\
+ * These tools attempt to produce a common loan amortization schedule.
+ * The lender you may choose may produce a somewhat different loan schedule
+ * due to things such as:
  *
- * Share and enjoy!
+ * * differences in rounding
+ * * differences in calculation precision
+ * * periodic loan fees and related loan expenses
+ * * bugs in the lender's loan calculation (this has actually been known to happen!)
+ * * bugs in this code
+ * * etc.
+ *
+ * You **MUST** consult with a certified financial planner and/or qualified loan agent
+ * before considering any loan or loan calculation.
+ *
+ * The calculations made by these programs are being provided for educational
+ * purposes only. The results are estimates based on information you provide
+ * and may not reflect actual results. The results of the calculations are
+ * not a promise or guarantee of a customer’s eligibility or terms for
+ * a specific product or service.
+ *
+ * Landon Curt Noll is not responsible for the content, results, or accuracy
+ * of the information on the calculators.
+ *
+ * The calculations are hypothetical examples designed to illustrate the
+ * impact compounding can have. The examples are not representative of
+ * any investment class or specific security. Actual returns and principal
+ * values will vary.
  *
  * Based on loan.c  (6 Jul 1994)
+ *
+ * chongo (Landon Curt Noll) /\oo/\
+ *
+ * http://www.isthe.com/chongo/index.html
+ * https://github.com/lcn2
+ *
+ * Share and Enjoy!     :-)
  */
 
 #include <stdio.h>
 #include <math.h>
 
 /*
- *
+ * official version
  */
+#define VERSION "1.5.1 2025-03-28"          /* format: major.minor YYYY-MM-DD */
 
 int
 main(void)		/* loan program */
 {
 	float amt, term, rate, ic;
-	float r, temp, pmt, fv;
-	float exp, prin, x, y, mbeg, mnbr, yrint = 0;
+	float r, pmt, fv;
+	float exp, prin, mbeg, mnbr, yrint = 0;
 	int month, i, k, a = 0, yr=1;
 	char d, filename[9], c;
 	FILE *fp;
@@ -55,7 +83,6 @@ main(void)		/* loan program */
 	/*  compute payment and future value  */
 
 	r = rate/100.0;
-	x = 1.0 + r/12.0;
 	term = log(1 - ((amt*r)/(12.0*pmt))) / (-12.0 * log(1 + r/12.0));
 	k = ceil(term*12.0);
 	fv = pmt*k;

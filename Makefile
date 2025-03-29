@@ -12,38 +12,94 @@
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
 #
-# chongo <was here> /\oo/\
+# chongo (Landon Curt Noll) /\oo/\
 #
-# Share and enjoy!
+# http://www.isthe.com/chongo/index.html
+# https://github.com/lcn2
+#
+# Share and enjoy!  :-)
 
-SHELL= bash
+
+#############
+# utilities #
+#############
+
 CC= cc
-CFLAGS= -O3 -g3 
-
-DESTDIR = /usr/local/bin
+CHMOD= chmod
+CP= cp
+ID= id
 INSTALL= install
+RM= rm
+SHELL= bash
+
+CFLAGS= -O3 -g3 --pedantic -Wall -Werror
+#CFLAGS= -O3 -g3 --pedantic -Wall
+
+
+######################
+# target information #
+######################
+
+# V=@:  do not echo debug statements (quiet mode)
+# V=@   echo debug statements (debug / verbose mode)
+#
+V=@:
+#V=@
+
+DESTDIR= /usr/local/bin
+
 TARGETS= loan loanlen
 
-all: ${TARGETS}
 
-loan: loan.o
-	${CC} ${CFLAGS} loan.o -o loan -lm
+######################################
+# all - default rule - must be first #
+######################################
+
+all: ${TARGETS}
+	${V} echo DEBUG =-= $@ start =-=
+	${V} echo DEBUG =-= $@ end =-=
 
 loan.o: loan.c
 	${CC} ${CFLAGS} loan.c -c
 
-loanlen: loanlen.o
-	${CC} ${CFLAGS} loanlen.o -o loanlen -lm
+loan: loan.o
+	${CC} ${CFLAGS} loan.o -o loan -lm
 
 loanlen.o: loanlen.c
 	${CC} ${CFLAGS} loanlen.c -c
 
-install: all
-	${INSTALL} -c -m 0755 loan ${DESTDIR}
-	${INSTALL} -c -m 0755 loanlen ${DESTDIR}
+loanlen: loanlen.o
+	${CC} ${CFLAGS} loanlen.o -o loanlen -lm
+
+
+#################################################
+# .PHONY list of rules that do not create files #
+#################################################
+
+.PHONY: all configure clean clobber install
+
+
+###################################
+# standard Makefile utility rules #
+###################################
+
+configure:
+	${V} echo DEBUG =-= $@ start =-=
+	${V} echo DEBUG =-= $@ end =-=
 
 clean:
-	rm -f *.o
+	${V} echo DEBUG =-= $@ start =-=
+	${RM} -f loan.o loanlen.o
+	${V} echo DEBUG =-= $@ end =-=
 
 clobber: clean
-	rm -f ${TARGETS}
+	${V} echo DEBUG =-= $@ start =-=
+	${RM} -f loan loanlen
+	${V} echo DEBUG =-= $@ end =-=
+
+install: all
+	${V} echo DEBUG =-= $@ start =-=
+	@if [[ $$(${ID} -u) != 0 ]]; then echo "ERROR: must be root to make $@" 1>&2; exit 2; fi
+	${INSTALL} -d -m 0755 ${DESTDIR}
+	${INSTALL} -m 0555 ${TARGETS} ${DESTDIR}
+	${V} echo DEBUG =-= $@ end =-=
