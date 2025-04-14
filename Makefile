@@ -46,7 +46,8 @@ CFLAGS= -O3 -g3 --pedantic -Wall -Werror
 V=@:
 #V=@
 
-DESTDIR= /usr/local/bin
+PREFIX= /usr/local
+DESTDIR= ${PREFIX}/bin
 
 TARGETS= loan loanlen
 
