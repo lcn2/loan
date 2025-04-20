@@ -65,7 +65,7 @@
 /*
  *
  * loan.c
- * @(#) loan.c amoritization program
+ * @(#) loan.c amortization program
  *
  * acronym:    loan amortization program
  *             ----
