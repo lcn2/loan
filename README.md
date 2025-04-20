@@ -11,15 +11,6 @@ sudo make install clobber
 ```
 
 
-# To use
-
-```sh
-/usr/local/bin/loan
-
-/usr/local/bin/loanlan
-```
-
-
 # Example
 
 
@@ -184,6 +175,15 @@ MONTH	PRINCIPAL	INTEREST	BALANCE
 		Term of loan in years:  3.04628
 		Standard Payment:  300.00
 		    Last Payment:  166.80
+```
+
+
+# To use
+
+```
+/usr/local/bin/loan
+
+/usr/local/bin/loanlan
 ```
 
 
